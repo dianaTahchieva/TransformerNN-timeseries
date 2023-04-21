@@ -1,0 +1,7 @@
+numpy
+pandas
+torch
+torch_optimizer
+torchvision
+thread6
+scikit-learn
