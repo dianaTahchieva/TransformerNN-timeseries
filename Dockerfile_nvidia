@@ -1,0 +1,21 @@
+FROM nvidia/cuda:11.3.1-base-ubuntu20.04
+
+# Curix user
+COPY . .
+
+# switch to root
+USER root
+
+#RUN chown -R ic-admin:curix /home/curix
+
+#RUN apt-get install nvidia-driver-450
+
+RUN apt-get update && apt-get install -y $(cat ubuntu_req.txt)
+RUN apt-get -y install python3-pip
+RUN pip3 install -r requirements.txt
+RUN apt-get autoremove -y
+
+RUN mkdir -p logs
+#RUN cp config  .
+
+CMD ["python3","main.py"]

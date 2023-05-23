@@ -52,7 +52,7 @@ class Data_processing(object):
             return y - trend, trend
     
     def data_loader(self):
-        df = pd.read_csv("datasets/energydata_complete_formatted.csv")
+        df = pd.read_csv("logs/energydata_complete_formatted.csv")
         keys = list(df.keys())
         sub_df = df[keys[:2]]
         keys = list(sub_df.keys())
